@@ -1,0 +1,7 @@
+.ferut:focus {
+    display: inline-block;
+    text-decoration: none;
+}
+.ferut::before{
+
+}
