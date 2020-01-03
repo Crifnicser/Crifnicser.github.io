@@ -1,24 +1,20 @@
-h1 {
-    display: inline-block;
-}
-p {
-    display: inline-block;
-}
+
 .hhhh {
     display: inline-block;
+    width: 350px;
+    
 }
 .nnnn {
     display: inline-block;
+    width: 350px;
+    height: 350px;
 }
 .mmmm {
     display: inline-block;
+    width: 350px;
 }
 .gggg {
     display: inline-block;
-}
-small {
-    display: inline-block;
-}
-img  {
-    display: inline-block;
+    width: 350px;
+    
 }
