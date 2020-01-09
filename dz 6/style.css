@@ -1,0 +1,22 @@
+
+.my-flex-container {
+    display: flex;
+    flex-direction:row;
+   justify-content: center;
+    align-items:center;
+  }
+  .pro1{
+      display: flex;
+      background-color: black;
+      flex-direction:row;
+      justify-content: center;
+      align-items:center;
+  }
+  button{
+    display: inline-block;
+    
+    background-color: gold;
+  }
+  .master{
+    background-color:black;
+  }
