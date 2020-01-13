@@ -1,9 +1,41 @@
 
-.necit {
-display: inline-block;
-width: 350px;
+
+.top_blocks{
+    width: 1200px;
+    height: 550px;
+  
 }
-.master {
-display: inline-block;
-width: 350px;
+
+.upper_block {
+    display: inline-block;
+    width: 550px;
+    height: 500px;
+    margin: 3px;
+ 
+}
+}
+.lower_blocks{
+    width: 1200px;
+    height: 550px;
+  
+}
+
+.the_lower_block {
+    display: inline-block;
+    width: 550px;
+    height: 500px;
+    margin: 3px;
+ 
+}
+
+.upper_block img {
+    height: 350px;
+}
+.the_lower_block img {
+    height: 350px;
+}
+button {
+    margin:30px 500px;
+    background-color: rgb(42, 175, 146);
+    border-color: rgba(136, 4, 148, 0.815);
 }
