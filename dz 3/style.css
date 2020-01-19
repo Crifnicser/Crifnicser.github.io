@@ -14,10 +14,10 @@
    border-color: red;
 }
 }
-.lower_blocks{
+.children_class{
     width: 1200px;
     height: 550px;
-  
+  border-color: red;
 }
 
 .the_lower_block {
