@@ -6,12 +6,12 @@
   
 }
 
-.upper_block {
+.parent {
     display: inline-block;
     width: 550px;
     height: 500px;
     margin: 3px;
- 
+   border-color: red;
 }
 }
 .lower_blocks{
