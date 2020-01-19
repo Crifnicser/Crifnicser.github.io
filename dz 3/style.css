@@ -6,18 +6,18 @@
   
 }
 
-.children_class{
+.children_class {
     display: inline-block;
     width: 550px;
     height: 500px;
     margin: 3px;
-   border-color: red;
+ 
 }
-}
-.{
+
+.parents{
     width: 1200px;
     height: 550px;
-  border-color: red;
+  
 }
 
 .child_class {
@@ -25,13 +25,13 @@
     width: 550px;
     height: 500px;
     margin: 3px;
-  border-color: red;
+ 
 }
 
-.upper_block img {
+.parent img {
     height: 350px;
 }
-.the_lower_block img {
+.parents img {
     height: 350px;
 }
 button {
