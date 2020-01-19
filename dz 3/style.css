@@ -1,12 +1,12 @@
 
 
-.top_blocks{
+.parent{
     width: 1200px;
     height: 550px;
   
 }
 
-.parent {
+.children_class{
     display: inline-block;
     width: 550px;
     height: 500px;
