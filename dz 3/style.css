@@ -39,3 +39,6 @@ button {
     background-color: rgb(42, 175, 146);
     border-color: rgba(136, 4, 148, 0.815);
 }
+span {
+   display: inline-block;
+}
