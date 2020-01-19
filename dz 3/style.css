@@ -3,7 +3,6 @@
 .parent{
     width: 1200px;
     height: 550px;
-  
 }
 
 .children_class {
@@ -11,13 +10,11 @@
     width: 550px;
     height: 500px;
     margin: 3px;
- 
 }
 
 .parents{
     width: 1200px;
     height: 550px;
-  
 }
 
 .child_class {
@@ -25,7 +22,6 @@
     width: 550px;
     height: 500px;
     margin: 3px;
- 
 }
 
 .parent img {
@@ -40,5 +36,7 @@ button {
     border-color: rgba(136, 4, 148, 0.815);
 }
 span {
-   display: inline-block;
+        color: blue;
+        display: block;
+        width: 30px;
 }
