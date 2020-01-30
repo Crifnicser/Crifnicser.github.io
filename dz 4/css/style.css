@@ -149,11 +149,11 @@
 }
 
 .navigation_links li a:hover {
-    color: #771391;
+    color: #f38181;
 }
 
 .navigation_links li a:after {
-    background-color: #771391;
+    background-color: #f38181;
     display: block;
     content: "";
     height: 3px;
