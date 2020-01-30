@@ -2,50 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>MASTER-HOMEWORK6</title>
 </head>
-<link rel="stylesheet" href="style.css">
 <body>
-    <div class="my-flex-container">
-            <div class="my-flex-block">
-                <img src="./img/pro.png" alt="">
-                <p></p>
-                <h1>hello</h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, cumque repellendus.</p>
-                </div>
-                <div class="my-flex-block">
-                    <img src="./img/pro2.png" alt="">
-                    <p></p>
-                    <h1>hello</h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, cumque repellendus.</p>
+    <header>
+        <nav class="navigation">
+            <div id="logo">
+                <a href="#">Golden</a>
+            </div>
+
+            <ul class="navigation_links">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">PORTFOLIO</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="services">
+            <div>
+                <h2 class="big_head_text">SERVICES</h2>
+                <span class="small_head_text">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</span>
+            </div>
+            <div class="main_text">
+                <div class="info_block">
+                    <div class="icon">
+                        <img src="./img/basket.png" alt="">
                     </div>
-                    <div class="my-flex-block">
-                        <p></p>
-                        <img src="./img/pro3.png" alt="">
-                        <h1>hello</h1>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, cumque repellendus.</p>
-                        </div>
-    </div>
-    <div class="master">
-        <div class="pro1">
-            <div >
-                    <form action="#" autocomplete="off" >
-                    <input type="text" placeholder="YOUR NAME" required><br>
-            <p></p>
-                    <input type="email" placeholder="YOUR E-MAIL" required><br>
-            <p></p>
-                    <input type="text" placeholder="SUBGECT"><br>
-            <p></p>
-                    </form>
+                    <div>
+                        <h4 class="headline">E-Commerce</h4>
+                        <p class="describe">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur sint doloremque natus ut nobis cumque?</p>
+                    </div>
                 </div>
-                <div> 
-                    <form action="#">
-                        <textarea cols="30" rows="10"></textarea>
-                    </form>
+                <div class="info_block">
+                    <div class="icon">
+                        <img src="./img/laptop.png" alt="">
+                    </div>
+                    <div>
+                        <h4 class="headline">Responsive Web</h4>
+                        <p class="describe">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur sint doloremque natus ut nobis cumque?</p>
+                    </div>
                 </div>
-            
-    </div>
-    <button>CLIC ME</button>
-    </div>
+                <div class="info_block">
+                    <div class="icon">
+                        <img src="./img/locked.png" alt="">
+                    </div>
+                    <div>
+                        <h4 class="headline">Web Security</h4>
+                        <p class="describe">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur sint doloremque natus ut nobis cumque?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact">
+            <div>
+                <h2 class="big_head_text_white">CONTACT US</h2>
+                <span class="small_head_text">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</span>
+            </div>
+            <form action="">
+                <div class="data">
+                    <div class="personal_data">
+                        <input name="client_name" type="text" placeholder="YOUR NAME *" required>
+                        <input name="email"  type="email" placeholder="YOUR E-MAIL *" class="email" required>
+                        <input name="subject" type="text" placeholder="SUBJECT">
+                    </div>
+                    <div class="message">
+                        <textarea type="text" placeholder="YOUR MESSAGE *" required></textarea>
+                    </div>
+                </div>
+                <div class="send_message" action="index.html">
+                    <button name="message" type="submit" value=''>SEND MESSAGE</button>
+                </div>
+            </form>
+        </div>
 </body>
 </html>
