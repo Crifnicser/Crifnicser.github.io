@@ -5,12 +5,12 @@
 
 @font-face {
   font-family: 'DroidSerif';
-  src: local(DroidSerif), url(../fonts/DroidSerif/DroidSerif-Italic.ttf);
+  src: local(DroidSerif), url(../fonts/DroidSerif/DroidSerifBoldItalic.ttf);
 }
 
 @font-face {
   font-family: 'WisdomScript';
-  src: local(WisdomScript), url(../fonts/WisdomScript/Wisdom_Script_AJ.otf);
+  src: local(WisdomScript), url(../fonts/WisdomScript/Wisdom\ Script\ AJ\ \(1\)\ \(1\).otf);
 }
 
 @font-face {
