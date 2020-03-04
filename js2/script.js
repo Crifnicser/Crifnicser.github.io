@@ -1,7 +1,7 @@
 //задача 1
-// let k1= '5px';
-//     k2= '12djd334';
-//     k3='12.45asdwe12';
+// let k1= '5px',
+//     k2= '12djd334',
+//     k3='12.45asdwe12',
 //     k4='qwqweeewq';
 //     console.log (Number.parseInt(k1));
 //     console.log (Number.parseInt(k2));
@@ -10,9 +10,9 @@
 
 
 //2
-// let k1= '5px';
-//     k2= '12djd334';
-//     k3='12.45asdwe12';
+// let k1= '5px',
+//     k2= '12djd334',
+//     k3='12.45asdwe12',
 //     k4='qwqweeewq';
 //     console.log (Number.parseFloat(k1));
 //     console.log (Number.parseFloat(k2));
@@ -26,8 +26,8 @@
 
 
 //4
-// const a='My ';
-//       b='name';
+// const a='My ',
+//       b='name',
 //       c=' is ';
 //       fullName=`${a}${b}${c}Viktor!`;
 //       console.log(fullName);
@@ -56,9 +56,9 @@
 
 
 // 9
-let a=5;
-    b=10;
-    c=5;
-    x=0;
-    result=Math.pow (ax,2)+bx+c;
-console.log (result);
+// let a=5,
+//     b=10,
+//     c=5,
+//     x=0;
+//     result=Math.pow (ax,2)+bx+c;
+// console.log (result);
