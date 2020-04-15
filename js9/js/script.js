@@ -58,8 +58,8 @@
 // let btn = document.querySelector(".sbm"),
 //     name = document.querySelector(".name");
 // btn.addEventListener('click', function() {
-//     if (name.value === 'Сергій') {
-//         alert('Winner winner chicken dinner!!!');
+//     if (name.value === 'Vita') {
+//         alert('You lose!!!');
 //         name.value = '';
 //     } else {
 //         name.value = '';
