@@ -20,12 +20,12 @@
 
 
 //4
-// function repeat (str,n){
-//     for (let i=0; i<n;i++){
-//         console.log(str[i]);
+// function repeat (str=' ', n=2) {
+//     for (let i=0; i<n; i++) {
+//         console.log(str);
 //     }
 // }
-// repeat([1,2,3],2);
+// repeat('', 2);
 
 
 //5
@@ -44,10 +44,28 @@
 
 
 //6
-function n(a,b){
-    nul();
-    function nul(){
-        return console.log(a+b, a-b, a*b);
-    }
-}
-n(10,5);
+// function n(a,b){
+//     nul();
+//     function nul(){
+//         return console.log(a+b, a-b, a*b);
+//     }
+// }
+// n(10,5);
+
+//7
+// function operation(m, n, o) {
+//     console.log(m+n+o);
+// }    
+// let o = function(a, b) {
+//     return a+b;
+// };
+// operation(2, 3, o(1,3));
+
+//8
+// function addN(n) {
+//     function addM(m) {
+//         console.log(m+n);
+//     }
+//     return addM(2);
+// }
+// addN(3);
