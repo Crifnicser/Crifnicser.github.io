@@ -55,13 +55,13 @@
 // });
 
 //8
-// let btn = document.querySelector(".sbm"),
-//     name = document.querySelector(".name");
-// btn.addEventListener('click', function() {
-//     if (name.value === 'Сергій') {
-//         alert('You Winner!');
-//         name.value = '';
-//     } else {
-//         name.value = '';
-//     }
-// });
+let btn = document.querySelector(".sbm"),
+    name = document.querySelector(".name");
+btn.addEventListener('click', function() {
+    if (name.value === 'Сергій') {
+        alert('You Winner!');
+        name.value = '';
+    } else {
+        name.value = '';
+    }
+});
