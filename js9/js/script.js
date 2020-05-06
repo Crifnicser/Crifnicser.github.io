@@ -49,7 +49,7 @@
 // }
 
 //7
-let img = document.querySelector(".shavuha");
+let img = document.querySelector(".Minecraft");
 img.addEventListener('mouseover', function() {
     alert(img.src);
 });
