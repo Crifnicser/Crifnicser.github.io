@@ -49,19 +49,19 @@
 // }
 
 //7
-// let img = document.querySelector(".shavuha");
-// img.addEventListener('mouseover', function() {
-//     alert(img.src);
-// });
+let img = document.querySelector(".shavuha");
+img.addEventListener('mouseover', function() {
+    alert(img.src);
+});
 
 //8
-let btn = document.querySelector(".sbm"),
-    name = document.querySelector(".name");
-btn.addEventListener('click', function() {
-    if (name.value === 'Сергій') {
-        alert('You Winner!');
-        name.value = '';
-    } else {
-        name.value = '';
-    }
-});
+// let btn = document.querySelector(".sbm"),
+//     name = document.querySelector(".name");
+// btn.addEventListener('click', function() {
+//     if (name.value === 'Сергій') {
+//         alert('You Winner!');
+//         name.value = '';
+//     } else {
+//         name.value = '';
+//     }
+// });
