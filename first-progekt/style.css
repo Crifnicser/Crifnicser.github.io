@@ -38,17 +38,11 @@ ul {
 header,
 main,
 footer {
-    width: 1443px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0px;
 }
 
-/* green button #00a51c  text #7acc5b */
-/* yellow button #ffb83d*/
-/* blue button #00bcb0*/
-/* grey button #f7f7f7  text #9f9f9f */
-.container {
-    width: 1201px;
-}
+
 
 .logo {
     font-family: "SourceSansPro-Bold";
@@ -60,10 +54,8 @@ footer {
 }
 
 .s1 {
-    /* тут реально надо что-то сделать с изображением */
     background-image: url("./img/photo_2020-05-01_20-20-44.jpg");
     background-repeat: no-repeat;
-    background-position: center;
 }
 
 .s1_title {
@@ -84,13 +76,65 @@ footer {
     margin: 0;
 }
 
-/* s2 */
+.choose-currency {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    background-color: #f7f7f7;
+    border-radius: 80px;
+}
+
+.currency-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 166px;
+    margin: 40px 0px;
+}
+
+.currency-list {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 600px;
+    height: 80px;
+}
+
+.currency-item {
+    border: none;
+    text-align: center;
+    border-bottom: 2px solid black;
+    width: 100px;
+    height: 40px;
+    font-size: 24px;
+    font-family: "SourceSansPro-Bold";
+    background-color: #00bcb0;
+    color: white;
+    border-radius: 15px 15px 0px 0px;
+    transition: .8s;
+    cursor: pointer;
+}
+
+.currency-item:hover {
+    height: 70px;
+    transition: .8s;
+}
+
+.currency {
+    font-size: 24px;
+    font-family: "SourceSansPro-Bold";
+    margin-left: 10px;
+}
+
 .s2 {
     display: flex;
     flex-flow: column;
     align-items: center;
-    margin: 0 auto;
-    width: 1443px;
+    margin: 0px;
+    width: 100%;
 }
 
 .s2_subTitle {
@@ -101,18 +145,54 @@ footer {
     color: #ffb83d;
 }
 
-.s2_incomes,
-.s2_costs {
+.s2_incomes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f7f7f7;
+    width: 100%;
+    border-radius: 80px;
+    margin: 20px 0px;
+}
+
+.s2_incomes-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 160px;
+    margin: 40px 0px;
+}
+
+.s2_incomes-list {
+    margin-top: 40px;
     display: flex;
     flex-flow: row;
     justify-content: space-between;
-    width: inherit;
+    height: auto;
 }
 
 .s2_costs {
-    height: 350px;
+    width: 100%;
     background-color: #f7f7f7;
     border-radius: 80px;
+    margin: 20px 0px;
+}
+
+.s2_costs-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 0px;
+    height: auto;
+}
+
+.s2_costs-list {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    height: auto;
 }
 
 .s2_incomes-main,
@@ -126,9 +206,12 @@ footer {
     width: 600px;
 }
 
-.s2_costs-main,
-.s2_costs-addit {
-    flex-flow: column;
+.s2_costs-main div,
+.s2_costs-addit div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .s2_incomes-main p,
@@ -140,15 +223,23 @@ footer {
     font-weight: bold;
 }
 
-.s2_incomes-main input,
-.s2_incomes-addit input {
-    width: 92px;
+.incomes-main,
+.incomes-addit {
+    width: 100px;
     height: 36px;
     border: none;
-    border-bottom: 1px solid rebeccapurple;
+    border-bottom: 2px solid black;
     margin-left: 26px;
-    color: #7acc5b;
+    color: black;
     font-size: 20px;
+    font-weight: bold;
+    font-family: "SourceSansPro-Bold";
+    background-color: #f7f7f7;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
 }
 
 .s2_costs-btn {
@@ -163,6 +254,12 @@ footer {
     border: none;
     border-radius: 10px;
     box-shadow: 0px 0px 26px -1px rgba(0, 0, 0, 0.91);
+    cursor: pointer;
+}
+
+.inner-li {
+    display: flex;
+    flex-direction: row;
 }
 
 .s2_total-btn {
@@ -178,9 +275,10 @@ footer {
     font-family: "SourceSansPro-Bold";
     font-size: 30px;
     font-weight: bold;
+    cursor: pointer;
+
 }
 
-/* розвахувати бюджет */
 .budget_calculation {
     display: none;
     flex-flow: column;
@@ -194,19 +292,33 @@ footer {
     flex-flow: row;
     justify-content: space-between;
     width: 560px;
+    margin: 5px 0px;
 }
 
-.budget_calculation-item div {
-    text-align: center;
+.calculation-block {
+    width: 160px;
 }
 
-.budget_calculation-item p {
+.calculation-number {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.budget-text {
     font-family: "SourceSansPro-Bold";
     font-size: 24px;
     font-weight: bold;
+    width: auto;
 }
 
-.budget_calculation-item button {
+.total-costs, .total-incomes, .remains {
+    display: flex;
+    flex-direction: row;
+}
+
+.calculation-block button {
     display: block;
     width: 160px;
     height: 26px;
@@ -217,16 +329,14 @@ footer {
     font-weight: bold;
     border: none;
     border-radius: 20px;
+    cursor: pointer;
 }
 
-/* перелік основних витрат */
 .mainCosts-list,
 .additCosts-list {
     font-family: "SourceSansPro-Regular";
-    font-size: 24px;
-    margin: 10px 0;
-    overflow-y:scroll;
-    height: 110px;
+    font-size: 26px;
+    margin: 50px 0;
 }
 
 .mainCosts-list span,
@@ -235,25 +345,25 @@ footer {
     position: relative;
 }
 
-
-.forCloseIcon::after {
-    content: "";
+.close-img{
     width: 30px;
     height: 30px;
-    background-repeat: no-repeat;
-    background-size: contain;
     display: inline-block;
     position: relative;
-    /* left: -50px; */
-    top: 7px;
-    padding-right: 30px;
-    background-image: url('./img/close-24px.svg');
+    cursor: pointer;
 }
 
-/* перелік додаткових витрат */
-
-
-/* введіть свої витрати */
+.form-back {
+    background-color: rgba(0, 0, 0, 0.71);
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
 
 .form_enter-costs {
     display: flex;
@@ -263,33 +373,8 @@ footer {
     height: 478px;
     border: none;
     border-radius: 5px;
+    background-color: #ffffff;
     box-shadow: 0px 0px 26px -1px rgba(0, 0, 0, 0.61);
-    position: fixed;
-    z-index: 97;
-    top: 10%;
-    background-color: #fff;
-    
-}
-
-.center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.bg-form{
-    display: none;
-    /* justify-content: center;
-    align-items: center; */
-
-    position: fixed;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.8);
-
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    left: 0;
 }
 
 .form_enter-costs h4 {
@@ -299,43 +384,66 @@ footer {
     margin-top: 40px;
 }
 
-.form_enter-costs div{
+.form-main-block {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-content: flex-start;
+    align-items: start;
+    justify-content: space-between;
+    margin: 20px 0px;
+    width: 810px;
 }
 
-.form_costs{
+.form-inputs {
     display: flex;
-    flex-flow: row wrap;
     flex-direction: column;
-    justify-content: flex-start;
-    width: 825px;
-    margin-top: 40px;
-    overflow-y:scroll;
-    height: 200px;
+    justify-content: start;
+    align-items: start;
+    width: 750px;
+    height: 250px;
+    overflow: auto;
+}
+
+.form-inputs::-webkit-scrollbar {
+    width: 12px;
+}
+
+.form-inputs::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+.form-inputs::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #ffb83d; 
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+.cost-block {
+    width: 730px;
+    margin-bottom: 10px;
+    height: 40px;
+    justify-content: center;
 }
 
 .enter_costname,
 .enter_costsum {
     height: 40px;
     padding-left: 20px;
-    color: rgb(135, 138, 141);
+    color: black;
+    font-family: "SourceSansPro-Regular";
+    font-size: 20px;
     border: none;
     border: 1px solid rgb(225, 230, 225);
     border-radius: 5px;
-    margin: 1px;
 }
 
 .enter_costname {
     width: 354px;
-    margin-right: 140px;
+    margin-right: 100px;
 }
 
 .enter_costsum {
     width: 230px;
-    height: 40px;
 }
 
 .add-cost {
@@ -346,12 +454,11 @@ footer {
     background-color: #00bcb0;
     color: #f7f7f7;
     font-weight: bold;
-    margin: 30px 0;
-    margin-left: 10px;
+    margin: 0px;
+    cursor: pointer;
 }
 
 .send-costs {
-    margin-top: 10px;
     width: 232px;
     height: 76px;
     color: #f7f7f7;
@@ -363,9 +470,8 @@ footer {
     font-family: "SourceSansPro-Bold";
     font-size: 30px;
     font-weight: bold;
+    cursor: pointer;
 }
-
-/* розвахувати бюджет */
 
 footer {
     display: flex;
