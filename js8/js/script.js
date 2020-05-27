@@ -49,12 +49,12 @@ head.color = 'green';
 //     four.style.display='block';
 // }
 
-// //8
-// let checked = document.querySelectorAll(".checkbox");
-// for(let i = 0; i<checked.length; i++){
-//     if(checked[i].hasAttribute('checked')){
-//         checked[i].removeAttribute('checked');
-//     }else{
-//         checked[i].setAttribute('checked', "");
-//     }
-// }
+//8
+let checked = document.querySelectorAll(".checkbox");
+for(let i = 0; i<checked.length; i++){
+    if(checked[i].hasAttribute('checked')){
+        checked[i].removeAttribute('checked');
+    }else{
+        checked[i].setAttribute('checked', "");
+    }
+}
