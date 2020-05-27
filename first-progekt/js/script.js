@@ -1,151 +1,182 @@
 
-function stopDefAction(evt) {
-    evt.preventDefault();
-};
 
-function InputsValue(let, value){
-    let.forEach((item) => {
-        item.value = value
-    });
-};
-
-
-let inputsBasiIncome = document.querySelectorAll(".inputsBasiIncome");
-inputsBasiIncome.forEach((item, i) => {
-    item.addEventListener('input',function(){console.log(item.value, i);});
-});
+let totalBtn = document.querySelector(".s2_total-btn"),
+    budgetCalc = document.querySelector(".budget_calculation"),
+    extraIncomes = document.querySelector(".incomes-addit"),
+    mainIncomes = document.querySelector(".incomes-main"),
+    totalIncomes = document.querySelector(".total-incomes"),
+    totalCosts = document.querySelector(".total-costs"),
+    remains = document.querySelector(".remains");
 
 
-let form = document.querySelector(".form_enter-costs");
-form.style.display = "none";
+let detailedCosts = document.querySelector(".detailed-costs"),
+    costsBlock = document.getElementById("costs"),
+    detailedIncomes = document.querySelector(".detailed-incomes"),
+    incomesBlock = document.getElementById("incomes");
 
-let count = 0;
-let buttonCosts = document.querySelectorAll(".s2_costs-btn");
-buttonCosts.forEach((item, i) => {
-        item.addEventListener('click', function() {
-        count = i;
-        form.style.display = "flex";
+let addCost = document.querySelectorAll(".s2_costs-btn"),
+    formBack = document.querySelector(".form-back"),
+    formEnter = document.querySelector(".form_enter-costs");
 
-        let enter_costname = document.querySelectorAll(".enter_costname"),
-            enter_costsum = document.querySelectorAll(".enter_costsum");
-
-        InputsValue(enter_costname, '');
-        InputsValue(enter_costsum, '');
-
-   
-        let beground = document.querySelector('.bg-form');   
-        beground.style.display = 'flex';
-  
-        beground.addEventListener('click', function() {
-            form.style.display = 'none';
-            beground.style.display = 'none';
-        });
-        form.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center'    
-        });
-    });
-});
-
-let mainCosts = document.querySelector(".mainCosts"),
-    additionalCosts = document.querySelector(".additionalCosts");
-let counter = 0;
-
-let AddCost = document.querySelectorAll(".add-cost");
-AddCost.forEach((item) => {
-    item.addEventListener('click', function() {
-        let formCosts = document.querySelector(".form_costs"),
-            htmlCode = '<div class="form_costs_chiilds"><input class="enter_costname" type="text" name="" id="" placeholder="Стаття витрат" /><input class="enter_costsum" type="number" name="" id="" placeholder="Сума" /> </div>';
-        formCosts.insertAdjacentHTML('beforeEnd', htmlCode);
-
-        counter++
-    });
-});
-
-document.querySelector('.add-cost').addEventListener(
-    'click', stopDefAction, false
-);
+//елементи вводу витрат
+let addOneMoreCost = document.querySelector(".add-cost"),
+    sendCosts = document.querySelector(".send-costs");
 
 
-let costsMain = document.querySelector('.costs-main'),
-    costsAdditional = document.querySelector('.costs-Additional');
-
-document.querySelector('.send-costs').addEventListener(
-    'click', stopDefAction, false
-);
-
-let btn = document.querySelector(".send-costs");
-btn.addEventListener('click', function() {
-    
-    let enter_costname = document.querySelectorAll(".enter_costname"),
-    enter_costsum = document.querySelectorAll(".enter_costsum");
-
-    enter_costname.forEach((item, i) => {
+let li,
+    target;
 
 
-        let enter
-        if(count == 0){
-            enter = document.querySelector(".mainCosts-list");
-        } else{
-            enter = document.querySelector(".additCosts-list");
-        };
+let newEnterCostName = document.createElement("input"),
+    newEnterCostSum = document.createElement("input"),
+    formInputs = document.querySelector(".form-inputs"),
+    enterCostBlock = document.querySelector(".cost-block"),
+    countOfNewInputs = 1;
 
-  
-        if(enter_costsum[i].value == ''){
-            console.error('item Error'); 
-        } else{
-            enter.innerHTML += '<li class="costs"><span class="nameCosts">'+ item.value +'</span><span class="forCloseIcon">'+ enter_costsum[i].value +'</span></li>';
+
+let currencyItems = document.querySelectorAll(".currency-item"),
+    currency = document.querySelectorAll(".currency");
+
+
+currencyItems.forEach(function (item) {
+    item.addEventListener("click", function () {
+        let action = event.target.dataset.action;
+        for (let i = 0; i < currency.length; i++) {
+            currency[i].innerText = action;
         }
     });
-
-    form.style.display = "none";
-  
-    let nav = document.querySelector('.s2_costs');
-    nav.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center'    
-    });
-
-    for(let i=0; i<counter; i++){
-        let form_chiild = document.querySelector('.form_costs_chiilds');
-        form_chiild.remove();
-    };
-    counter=0;
-
-  
-    let block = document.querySelectorAll('li.costs')
-    block.forEach((item, i) => {
-        item.addEventListener('click', function() {
-        item.remove();
-        });
-    });
-
-    let beground = document.querySelector('.bg-form');   
-    beground.style.display = 'none';
 });
 
-let CalculateTheBudget = document.querySelector('.s2_total-btn');
-CalculateTheBudget.addEventListener('click', function() {
-    let btn_calculation = document.querySelector('.budget_calculation');
-    let allCosts = document.querySelectorAll('.forCloseIcon'),
-        allIncome = document.querySelectorAll('.Income');
-    let spending = 0,
-        revenue = 0;
-        
+let enterIncomes = document.querySelectorAll(".number");
+enterIncomes.forEach(function (item) {
+    item.addEventListener('input', function () {
+        if (item.value > 999999999) {
+            item.value = 999999999;
+        }
+    });
+});
 
-    allCosts.forEach((item) => {
-        spending+=Number(item.textContent);
-    });  
+addCost.forEach(function (item) {
+    item.addEventListener("click", function () {
+        formInputs.innerHTML = '<div class="cost-block"><input required maxlength="20" class="enter_costname" type="text" placeholder="Витрата"/><input required class="enter_costsum" type="number" placeholder="Сума" /><span><img class="close-img" src="./img/close.png"></img></span></div>';
+        formBack.style.display = "flex";
+        target = event.target;
+        maxValue();
+    });
+});
 
-    allIncome.forEach((item) => {
-        revenue+=Number(item.value);
-    });   
-    
-    let info = document.querySelectorAll('.info');
 
-    info[1].innerHTML = spending + ' uah';
-    info[0].innerHTML = revenue + ' uah';
-    info[2].innerHTML = revenue-spending + ' uah';
+function maxValue() {
+    let enterCostSum = document.querySelectorAll(".enter_costsum");
+    enterCostSum.forEach(function (item) {
+        item.addEventListener('input', function () {
+            if (item.value > 999999999) {
+                item.value = 999999999;
+            }
+        });
+    });
+    event.preventDefault();    
+}
 
-    btn_calculation.style.display = "flex"; 
+
+addOneMoreCost.addEventListener("click", function (event) {
+    countOfNewInputs++;
+    formInputs.insertAdjacentHTML("beforeend", '<div class="cost-block"><input required maxlength="20" class="enter_costname" type="text" placeholder="Витрата"/><input required class="enter_costsum" type="number" placeholder="Сума" /><span><img class="close-img" src="./img/close.png"></img></span></div>');
+    formInputs.addEventListener("click", function (event) {
+        let target = event.target;
+        if (target.classList.contains("close-img")) {
+            let parent = target.parentNode;
+            parent.parentNode.remove();
+            countOfNewInputs--;
+        } else {
+            return;
+        }
+    });
+    maxValue();
+
+});
+
+
+sendCosts.addEventListener("click", function (event) {
+    let enterCostName = document.querySelectorAll(".enter_costname"),
+        enterCostSum = document.querySelectorAll(".enter_costsum");
+
+   
+    for (let i = 0; i < countOfNewInputs; i++) {
+        if (enterCostSum[i].value === '' || enterCostName[i].value === '') {
+            return;
+        }
+    }
+
+    enterCostSum.forEach(function (item, i) {
+        if (target.classList.contains("main")) {
+            li = document.querySelector(".mainCosts-list");
+        } else {
+            li = document.querySelector(".additCosts-list");
+        }
+        li.innerHTML += '<li class="inner-li"><span>' + enterCostName[i].value + '</span><span class="number">' + item.value + '</span><span><img class="close-img" src="./img/close.png"></img></span><br></li>';
+    });
+    formInputs.innerHTML = '<div class="cost-block"><input required maxlength="20" class="enter_costname" type="text" placeholder="Витрата"/><input required class="enter_costsum" type="number" placeholder="Сума" /><span><img class="close-img" src="./img/close.png"></img></span></div>';
+    countOfNewInputs = 1;
+    formBack.style.display = "none";
+    event.preventDefault();
+});
+
+//закриття вікна через темне поле
+formBack.addEventListener("click", function () {
+    countOfNewInputs = 1;
+    formInputs.innerHTML = '<div class="cost-block"><input required maxlength="20" class="enter_costname" type="text" placeholder="Витрата"/><input required class="enter_costsum" type="number" placeholder="Сума" /><span><img class="close-img" src="./img/close.png"></img></span></div>';
+    formBack.style.display = "none";
+});
+
+//вимикання закриття вікна через інші елементи
+formEnter.addEventListener("click", function (e) {
+    e.stopPropagation();
+});
+
+//видалення по крестику
+costsBlock.addEventListener("click", function (event) {
+    let target = event.target;
+    if (target.classList.contains("close-img")) {
+        let parent = target.parentNode;
+        parent.parentNode.remove();
+    } else {
+        return;
+    }
+});
+
+
+function arraySum() {
+    let sum = 0,
+        costsSum = document.querySelectorAll(".number");
+    if (costsSum.length === 0) {
+        totalCosts.innerHTML = 0;
+    }
+    costsSum.forEach(function (item) {
+        sum += Number(item.innerText);
+        totalCosts.innerHTML = sum;
+    });
+}
+
+
+totalBtn.addEventListener("click", function () {
+    totalIncomes.innerHTML = Number(mainIncomes.value) + Number(extraIncomes.value);
+    arraySum();
+    remains.innerHTML = Number(totalIncomes.innerText) - Number(totalCosts.innerText);
+    budgetCalc.style.display = "flex";
+});
+
+
+detailedCosts.addEventListener("click", function () {
+    costsBlock.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+});
+
+detailedIncomes.addEventListener("click", function () {
+    incomesBlock.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
 });
