@@ -1,5 +1,5 @@
 
-
+//елементи розрахунку бюджету
 let totalBtn = document.querySelector(".s2_total-btn"),
     budgetCalc = document.querySelector(".budget_calculation"),
     extraIncomes = document.querySelector(".incomes-addit"),
@@ -14,11 +14,12 @@ let detailedCosts = document.querySelector(".detailed-costs"),
     detailedIncomes = document.querySelector(".detailed-incomes"),
     incomesBlock = document.getElementById("incomes");
 
+
 let addCost = document.querySelectorAll(".s2_costs-btn"),
     formBack = document.querySelector(".form-back"),
     formEnter = document.querySelector(".form_enter-costs");
 
-//елементи вводу витрат
+
 let addOneMoreCost = document.querySelector(".add-cost"),
     sendCosts = document.querySelector(".send-costs");
 
@@ -55,6 +56,7 @@ enterIncomes.forEach(function (item) {
         }
     });
 });
+
 
 addCost.forEach(function (item) {
     item.addEventListener("click", function () {
@@ -101,7 +103,7 @@ sendCosts.addEventListener("click", function (event) {
     let enterCostName = document.querySelectorAll(".enter_costname"),
         enterCostSum = document.querySelectorAll(".enter_costsum");
 
-   
+    
     for (let i = 0; i < countOfNewInputs; i++) {
         if (enterCostSum[i].value === '' || enterCostName[i].value === '') {
             return;
@@ -122,19 +124,19 @@ sendCosts.addEventListener("click", function (event) {
     event.preventDefault();
 });
 
-//закриття вікна через темне поле
+
 formBack.addEventListener("click", function () {
     countOfNewInputs = 1;
     formInputs.innerHTML = '<div class="cost-block"><input required maxlength="20" class="enter_costname" type="text" placeholder="Витрата"/><input required class="enter_costsum" type="number" placeholder="Сума" /><span><img class="close-img" src="./img/close.png"></img></span></div>';
     formBack.style.display = "none";
 });
 
-//вимикання закриття вікна через інші елементи
+
 formEnter.addEventListener("click", function (e) {
     e.stopPropagation();
 });
 
-//видалення по крестику
+
 costsBlock.addEventListener("click", function (event) {
     let target = event.target;
     if (target.classList.contains("close-img")) {
@@ -157,7 +159,6 @@ function arraySum() {
         totalCosts.innerHTML = sum;
     });
 }
-
 
 totalBtn.addEventListener("click", function () {
     totalIncomes.innerHTML = Number(mainIncomes.value) + Number(extraIncomes.value);
