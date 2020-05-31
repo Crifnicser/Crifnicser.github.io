@@ -181,3 +181,12 @@ detailedIncomes.addEventListener("click", function () {
         block: "center"
     });
 });
+let btn = document.querySelector(".s2_total-btn"),
+    img = document.querySelector(".s1");
+btn.addEventListener('click', function(){
+    if (img.classList.contains("hide")) {
+        img.classList.remove("hide");
+    } else {
+        img.classList.add("hide");
+    }
+});
